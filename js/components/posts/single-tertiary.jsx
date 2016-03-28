@@ -5,7 +5,7 @@ import classNames from 'classnames';
 // Internal dependencies
 import ContentMixin from 'utils/content-mixin';
 
-let Secondarypost = React.createClass( {
+let Tertiarypost = React.createClass( {
 	mixins: [ ContentMixin ],
 
 	render: function() {
@@ -21,7 +21,7 @@ let Secondarypost = React.createClass( {
 
 		return (
 			<article id={ `post-${this.props.id}` } className="col--two">
-
+				<h1>TEST</h1>
 				<h2>
 					<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
 				</h2>
@@ -41,4 +41,4 @@ let Secondarypost = React.createClass( {
 
 
 
-export default Secondarypost;
+export default Tertiarypost;

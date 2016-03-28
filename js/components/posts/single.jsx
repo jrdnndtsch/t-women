@@ -25,6 +25,8 @@ let Post = React.createClass( {
 					<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
 				</h2>
 
+				{ this.getCategory( post )}
+				<img src={ this.props.featured_media !== 0 ? this.getFeaturedImage( this.props ) : null }/>
 				<div className="entry-content" dangerouslySetInnerHTML={ this.getExcerpt( post ) } />
 
 				<div className="entry-meta">

@@ -12,7 +12,7 @@ export default {
 	},
 
 	getShortExcerpt: function( data ) {
-		return { __html: data.excerpt.rendered };
+		return {__html: data.excerpt.rendered.split(' ').slice(0, 21).join(' ')+'...' }
 	},
 	getContent: function( data ) {
 		return { __html: data.content.rendered };
@@ -26,6 +26,18 @@ export default {
 	getTime: function( data ) {
 		let date = moment( data.date );
 		return date.format( 'h:mm a' );
+	},
+	getCategory: function( data ){
+		return data._embedded['https://api.w.org/term'][0].map(function( cat ){
+			return cat.name
+		});
+	},
+	getFeaturedImage: function( data ) {
+		if( data._embedded['https://api.w.org/featuredmedia'] ){
+			return (data._embedded['https://api.w.org/featuredmedia'][0].source_url);
+		}else {
+			return
+		}
 	},
 
 	getFeaturedMedia: function( data ) {

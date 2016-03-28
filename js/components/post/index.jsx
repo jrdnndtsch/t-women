@@ -86,7 +86,7 @@ let SinglePost = React.createClass( {
 		} );
 
 		featuredMedia = this.getFeaturedMedia( post );
-    featuredImage = this.getFeaturedImage( post );
+    
 
 		return (
 			<div className="card">
@@ -96,10 +96,8 @@ let SinglePost = React.createClass( {
 						<Media media={ featuredMedia } parentClass='entry-image' /> :
 						null
 					}
-          { featuredImage ?
-            <img src={ featuredImage }
-            parentClass="entry-image" /> : null
-          }
+        
+        
 					<div className="entry-meta"></div>
 					<div className="entry-content" dangerouslySetInnerHTML={ this.getContent( post ) } />
 
