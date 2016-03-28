@@ -38,6 +38,8 @@ let SinglePost = React.createClass( {
 	},
 
 	getInitialState: function() {
+    console.log('getInitialstate')
+    console.log(this.props.slug)
 		return getState( this.props.slug );
 	},
 
@@ -85,9 +87,13 @@ let SinglePost = React.createClass( {
 			entry: true
 		} );
 
-		featuredMedia = this.getFeaturedMedia( post );
+		// featuredMedia = this.getFeaturedMedia( post );
     // featuredImage = this.state.data._embedded["https://api.w.org/featuredmedia"][0].source_url;
-    featuredImage = this.getFeaturedImage( post.state )
+    // featuredImage = this.state.data.better_featured_image.source_ url
+    // featuredImage = post.better_featured_image.source_url
+    // featuredImage = post.better_featured_image.source_url
+    // featuredImage2 = this.getBetterFeaturedImage( post )
+    // featuredImage = this.getFeaturedImage( post.state )
 
 		return (
 			<div className="card">
@@ -97,10 +103,9 @@ let SinglePost = React.createClass( {
 						<Media media={ featuredMedia } parentClass='entry-image' /> :
 						null
 					}
-          { featuredImage ?
-            <img src={ featuredImage }
-            parentClass="entry-image" /> : null
-          }
+          <div className="entry-image">
+            <img src={ this.getBetterFeaturedImage( post ) } />
+          </div>
 					<div className="entry-meta"></div>
 					<div className="entry-content" dangerouslySetInnerHTML={ this.getContent( post ) } />
 
