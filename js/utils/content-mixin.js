@@ -25,6 +25,16 @@ export default {
 		return date.format( 'h:mm a' );
 	},
 
+  getFeaturedImage: function( data ) {
+    if ( 'undefined' === typeof data._embedded['wp:featuredmedia'] ) {
+      return false;
+    }
+    let image = find( data._embedded['wp:featuredmedia'], function( item ) {
+      return ( 'undefined' !== typeof item.source_url);
+    } );
+    return image;
+  },
+
 	getFeaturedMedia: function( data ) {
 		if ( 'undefined' === typeof data._embedded['wp:featuredmedia'] ) {
 			return false;

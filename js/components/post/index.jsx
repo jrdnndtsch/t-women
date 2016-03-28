@@ -72,7 +72,7 @@ let SinglePost = React.createClass( {
 	},
 
 	render: function() {
-		let post, classes, featuredMedia;
+		let post, classes, featuredMedia, featuredImage;
 
 		post = this.state.data;
 		if ( 'undefined' === typeof post.title ) {
@@ -86,7 +86,8 @@ let SinglePost = React.createClass( {
 		} );
 
 		featuredMedia = this.getFeaturedMedia( post );
-    featuredImage = this.getFeaturedImage( post );
+    // featuredImage = this.state.data._embedded["https://api.w.org/featuredmedia"][0].source_url;
+    featuredImage = this.getFeaturedImage( post.state )
 
 		return (
 			<div className="card">
