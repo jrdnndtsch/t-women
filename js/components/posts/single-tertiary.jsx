@@ -20,8 +20,7 @@ let Tertiarypost = React.createClass( {
 		} );
 
 		return (
-			<article id={ `post-${this.props.id}` } className="col--two">
-				<h1>TEST</h1>
+			<article id={ `post-${this.props.id}` }>
 				<h2>
 					<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
 				</h2>
@@ -29,7 +28,6 @@ let Tertiarypost = React.createClass( {
 					<time dateTime={ post.date }>{ this.getDate( post ) }</time>
 				</a>
 				<span>{ this.getCategory( post )}</span>
-				<div className="entry-content" dangerouslySetInnerHTML={ this.getShortExcerpt( post ) } />
 
 				<a href={ post.link } rel="bookmark" className="button button--read-more">
 					read more

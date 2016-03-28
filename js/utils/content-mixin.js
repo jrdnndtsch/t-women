@@ -40,6 +40,26 @@ export default {
 		}
 	},
 
+  getFeaturedImage: function( data ) {
+    if ( 'undefined' === typeof data._embedded['wp:featuredmedia'] ) {
+      return false;
+    }
+    let image = find( data._embedded['wp:featuredmedia'], function( item ) {
+      return ( 'undefined' !== typeof item.source_url);
+    } );
+    return image;
+  },
+
+  getBetterFeaturedImage: function( data ) {
+    if ( 'undefined' === typeof data.better_featured_image ) {
+      return false;
+    } else if ( 'undefine' === typeof data.better_featured_image.source_url) {
+      return false;
+    } else {
+      return data.better_featured_image.source_url;
+    }
+  },
+
 	getFeaturedMedia: function( data ) {
 		if ( 'undefined' === typeof data._embedded['wp:featuredmedia'] ) {
 			return false;

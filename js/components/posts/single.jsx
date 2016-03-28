@@ -11,6 +11,11 @@ let Post = React.createClass( {
 	render: function() {
 		let post = this.props;
 
+    // let featuredImage = this.props._embedded['https://api.w.org/featuredmedia'][0].source_url
+    // let featuredImage = this.props.better_featured_image.source_url
+
+    // let featuredImage = this.getFeaturedImage( post.props )
+
 		if ( 'attachment' === post.type ) {
 			return null;
 		}
@@ -25,8 +30,9 @@ let Post = React.createClass( {
 					<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
 				</h2>
 
-				{ this.getCategory( post )}
-				<img src={ this.props.featured_media !== 0 ? this.getFeaturedImage( this.props ) : null }/>
+		        <div class="entry-image">
+		          <img src={ this.getBetterFeaturedImage( post ) } />
+		        </div>
 				<div className="entry-content" dangerouslySetInnerHTML={ this.getExcerpt( post ) } />
 
 				<div className="entry-meta">
