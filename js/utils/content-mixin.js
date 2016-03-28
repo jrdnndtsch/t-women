@@ -11,6 +11,9 @@ export default {
 		return { __html: data.excerpt.rendered };
 	},
 
+	getShortExcerpt: function( data ) {
+		return { __html: data.excerpt.rendered };
+	},
 	getContent: function( data ) {
 		return { __html: data.content.rendered };
 	},
@@ -33,6 +36,6 @@ export default {
 			return ( 'undefined' !== typeof item.source_url );
 		} );
 		return media;
-	},
+	}
 
 };

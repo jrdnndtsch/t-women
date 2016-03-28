@@ -58,7 +58,7 @@ gulp.task( 'sass:build', function() {
 
 gulp.task( 'sass:watch', function() {
 	doSass();
-	gulp.watch( [ './sass/**/*.scss', './js/**/*.scss' ], doSass );
+	gulp.watch( [ './sass/**/*.scss', './js/**/*.scss', './sass/**/*.sass', './js/**/*.sass '], doSass );
 } );
 
 gulp.task( 'react:build', function( done ) {
