@@ -1,0 +1,50 @@
+.post 
+	.post--date
+		:text-transform uppercase
+		&:after
+			:content '•'
+			:margin 0 10px
+.post--primary
+	:border-bottom 1px solid $purple
+	:position relative
+	:padding 60px 0
+	&:after
+		:content ''
+		:display block
+		:position absolute
+		:bottom -5px
+		:left 0
+		:height 1px
+		:background $purple
+		:width 100%
+	img 
+		:margin-bottom 30px
+		:width 100%
+	.post--content
+		:padding 0 2.5%	
+.post--secondary 
+	:background white
+	:border 1px solid $purple
+	:position relative
+	:padding 5%
+	&:before
+		:content " "
+		:position absolute
+		:top 5px
+		:left 5px
+		:right 5px
+		:bottom 5px
+		:border 1px solid $purple
+	+display-for(xl lg md)
+		&:nth-of-type(4n), &:nth-of-type(4n + 1)
+			:margin-top 60px 
+			:margin-bottom 30px
+			+display-for(xl)
+				:margin-bottom 50px	
+			+display-for(lg)
+				:margin-bottom 40px		
+	+display-for(sm xs)
+		:margin-bottom 40px
+		&:nth-of-type(4n)
+			:margin-top 65px
+

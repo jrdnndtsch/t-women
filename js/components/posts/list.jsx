@@ -13,9 +13,8 @@ let PostList = React.createClass( {
 
 	render: function() {
 		let posts = this.props.posts.map( function( post, i ) {
-			//TODO make ternary operator work
 			if( i < 3 ) {
-				console.log(i + 'one')
+				console.log(post)
 				return <Post key={ 'post-' + i } { ...post } />
 			} else if( 3 <= i && i < 7	 ){
 				console.log(i + 'two')

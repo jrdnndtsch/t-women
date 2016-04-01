@@ -1,9 +1,11 @@
 .container
 	.col
 		&--two
-			+make-column(19.32)
-			+display-for(xs)
-				+make-column(40)
+			+make-gutter(1, 1)
+			+make-column(18)
+			+display-for(sm xs)
+				+make-gutter(1, 1)
+				+make-column(38)
 		&--three
 			+make-column(13)
 			+display-for(sm)
@@ -16,5 +18,5 @@
 				+make-column(20)
 			+display-for(xs)
 				+make-column(40)
-	.col--two, .col--three, .col--four
-		:padding 20px
+	// .col--two, .col--three, .col--four
+	// 	:padding 20px

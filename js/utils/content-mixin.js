@@ -28,9 +28,12 @@ export default {
 		return date.format( 'h:mm a' );
 	},
 	getCategory: function( data ){
-		return data._embedded['https://api.w.org/term'][0].map(function( cat ){
-			return cat.name
+		var categories = []
+		data._embedded['https://api.w.org/term'][0].map(function( cat ){
+			categories.push([cat.name, cat.link])
 		});
+		console.log(categories + 'test')
+		return categories
 	},
 	getFeaturedImage: function( data ) {
 		if( data._embedded['https://api.w.org/featuredmedia'] ){
@@ -39,16 +42,20 @@ export default {
 			return
 		}
 	},
-
-  getFeaturedImage: function( data ) {
-    if ( 'undefined' === typeof data._embedded['wp:featuredmedia'] ) {
-      return false;
-    }
-    let image = find( data._embedded['wp:featuredmedia'], function( item ) {
-      return ( 'undefined' !== typeof item.source_url);
-    } );
-    return image;
-  },
+	getPostACF: function( data, field ) {
+		if(data.acf){
+			return data.acf[field]
+		}
+	}, 
+  // getFeaturedImage: function( data ) {
+  //   if ( 'undefined' === typeof data._embedded['wp:featuredmedia'] ) {
+  //     return false;
+  //   }
+  //   let image = find( data._embedded['wp:featuredmedia'], function( item ) {
+  //     return ( 'undefined' !== typeof item.source_url);
+  //   } );
+  //   return image;
+  // },
 
   getBetterFeaturedImage: function( data ) {
     if ( 'undefined' === typeof data.better_featured_image ) {

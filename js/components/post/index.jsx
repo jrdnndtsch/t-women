@@ -38,8 +38,8 @@ let SinglePost = React.createClass( {
 	},
 
 	getInitialState: function() {
-    console.log('getInitialstate')
-    console.log(this.props.slug)
+    	// console.log('getInitialstate')
+    	console.log(this.props.slug + 'slug')
 		return getState( this.props.slug );
 	},
 
@@ -106,7 +106,7 @@ let SinglePost = React.createClass( {
 					}
 
 			          <div className="entry-image">
-			            <img src={ this.getBetterFeaturedImage( post ) } />
+			            <img src={ this.getFeaturedImage( post ) } />
 			          </div>
 
 					<div className="entry-meta"></div>

@@ -1,12 +1,12 @@
 /*--------------------------------------------------------------
    Site structure
 --------------------------------------------------------------*/
-.site {
-	margin: 0 auto;
-	padding: 0 15px;
-	max-width: $size__site-container;
+// .site {
+// 	margin: 0 auto;
+// 	padding: 0 15px;
+// 	max-width: $size__site-container;
 
-	@include breakpoint( '<660px' ) {
-		padding: 0 25px;
-	}
-}
+// 	@include breakpoint( '<660px' ) {
+// 		padding: 0 25px;
+// 	}
+// }

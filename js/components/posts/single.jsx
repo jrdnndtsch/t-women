@@ -25,23 +25,19 @@ let Post = React.createClass( {
 		} );
 
 		return (
-			<article id={ `post-${this.props.id}` } className={ classes }>
-				<h2 className="entry-title">
-					<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
-				</h2>
-
-		        <div class="entry-image">
-		          <img src={ this.getBetterFeaturedImage( post ) } />
-		        </div>
-				<div className="entry-content" dangerouslySetInnerHTML={ this.getExcerpt( post ) } />
-
-				<div className="entry-meta">
-					<div className="entry-meta-label">published</div>
-					<div className="entry-meta-value">
-						<a href={ post.link } rel="bookmark">
-							<time className="entry-date published updated" dateTime={ post.date }>{ this.getDate( post ) }</time>
-						</a>
-					</div>
+			<article id={ `post-${this.props.id}` } className={ `post post--primary  post--${this.getPostACF( post, 'featured_image_style' )}`}>
+				<div className="post--content">
+					<h2>
+						<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
+					</h2>
+					<p>{this.getCategory( post )}</p>
+					<a href={ post.link } rel="bookmark">
+						<time className="post--date published updated" dateTime={ post.date }>{ this.getDate( post ) }</time>
+					</a>
+					<a href="#">category</a>
+			        <img src={ this.getFeaturedImage( post ) } />
+					<div className="entry-content" dangerouslySetInnerHTML={ this.getExcerpt( post ) } />
+					<a href={ this.props.link }>Read More</a>
 				</div>
 			</article>
 		);

@@ -2,44 +2,44 @@
     Header
 --------------------------------------------------------------*/
 
-.site-header {
-	margin: 20px auto 0;
-	padding-bottom: 40px;
-	display: flex;
-	flex-flow: row wrap;
-	align-items: flex-start;
+// .site-header {
+// 	margin: 20px auto 0;
+// 	padding-bottom: 40px;
+// 	display: flex;
+// 	flex-flow: row wrap;
+// 	align-items: flex-start;
 
-	@include breakpoint( '>660px' ) {
-		margin-top: 75px;
-		margin-bottom: 40px;
-	}
-}
+// 	@include breakpoint( '>660px' ) {
+// 		margin-top: 75px;
+// 		margin-bottom: 40px;
+// 	}
+// }
 
-.site-branding {
-	flex: 1 100%;
+// .site-branding {
+// 	flex: 1 100%;
 
-	@include breakpoint( '>660px' ) {
-		flex: 1 $size__site-sidebar;
-		width: $size__site-sidebar;
-		margin-right: $size__site-gutter;
-		text-align: right;
-	}
-}
+// 	@include breakpoint( '>660px' ) {
+// 		flex: 1 $size__site-sidebar;
+// 		width: $size__site-sidebar;
+// 		margin-right: $size__site-gutter;
+// 		text-align: right;
+// 	}
+// }
 
-.main-navigation {
-	flex: 1 100%;
+// .main-navigation {
+// 	flex: 1 100%;
 
-	@include breakpoint( '>660px' ) {
-		flex: 1 $size__site-content;
-		margin-top: 15px;
-	}
-}
+// 	@include breakpoint( '>660px' ) {
+// 		flex: 1 $size__site-content;
+// 		margin-top: 15px;
+// 	}
+// }
 
-.site-title a,
-.site-logo-link {
-	&:hover,
-	&:active,
-	&:focus {
-		outline: none;
-	}
-}
+// .site-title a,
+// .site-logo-link {
+// 	&:hover,
+// 	&:active,
+// 	&:focus {
+// 		outline: none;
+// 	}
+// }

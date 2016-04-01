@@ -7,3 +7,7 @@ $grid-base: 40
 =make-gutter($left-gutter: 0, $right-gutter: 0, $grid: $grid-base)
 	:margin-left percentage($left-gutter / $grid)
 	:margin-right percentage($right-gutter / $grid)
+	
+=make-gutter-padded($left-gutter: 0, $right-gutter: 0, $grid: $grid-base)
+	:padding-left percentage($left-gutter / $grid)
+	:padding-right percentage($right-gutter / $grid)

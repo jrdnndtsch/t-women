@@ -20,15 +20,15 @@ let Secondarypost = React.createClass( {
 		} );
 
 		return (
-			<article id={ `post-${this.props.id}` } className="col--two">
+			<article id={ `post-${this.props.id}` } className="post post--secondary col--two">
 
 				<h2>
 					<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
 				</h2>
 				<a href={ post.link } rel="bookmark">
-					<time dateTime={ post.date }>{ this.getDate( post ) }</time>
+					<time dateTime={ post.date } className="post--date">{ this.getDate( post ) }</time>
 				</a>
-				<span>{ this.getCategory( post )}</span>
+				<p>{this.getCategory( post )}</p>
 				<div className="entry-content" dangerouslySetInnerHTML={ this.getShortExcerpt( post ) } />
 
 				<a href={ post.link } rel="bookmark" className="button button--read-more">
