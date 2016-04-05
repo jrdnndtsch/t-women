@@ -6,6 +6,7 @@ let SearchForm = React.createClass( {
 		return this.refs.input.value;
 	},
 	render: function() {
+		console.log(this)
 		return (
 			<form role="search" className="search-form">
 				<label>

@@ -134,13 +134,14 @@ let Controller = {
 	},
 
 	termArchive: function( context ) {
+		console.log('term archive')
 		var path = context.pathname.split( '#' )[0];
 
 		_currentPage = parseInt( context.params.page ) || 1;
 
 		if ( 'undefined' !== typeof context.params.term ) {
 			_currentSlug = context.params.term;
-			_currentType = path.match( /^\/category/ ) ? 'categories' : 'tags';
+			_currentType = path.match( /category/ ) ? 'categories' : 'tags';
 		}
 
 		setBodyClass( 'archive' );

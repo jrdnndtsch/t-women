@@ -1,4 +1,8 @@
 .post 
+	.post--categories, .post--date
+		:margin-bottom 30px
+	.post--categories 
+		:display inline-block
 	.post--date
 		:text-transform uppercase
 		&:after
@@ -30,10 +34,12 @@
 	&:before
 		:content " "
 		:position absolute
-		:top 5px
-		:left 5px
-		:right 5px
-		:bottom 5px
+		:top -5px
+		:left -5px
+		:right -5px
+		:bottom -5px
+		:background white
+		:z-index -1
 		:border 1px solid $purple
 	+display-for(xl lg md)
 		&:nth-of-type(4n), &:nth-of-type(4n + 1)

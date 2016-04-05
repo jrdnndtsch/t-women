@@ -62,6 +62,10 @@ let Search = React.createClass( {
 		return '';
 	},
 
+	search: function(){
+		console.log('I am searching')
+	},
+
 	setTitle: function() {
 		let term = this.getSearchValue();
 		document.title = `Search results for ${term} — ${FoxhoundSettings.title}`;

@@ -2,32 +2,32 @@
     Single Posts & Pages
 --------------------------------------------------------------*/
 
-.single {
-	.entry-content > p:first-of-type {
-		@include font-size( 24 );
-	}
+// .single {
+// 	.entry-content > p:first-of-type {
+// 		@include font-size( 24 );
+// 	}
 
-	.entry-title,
-	.entry-image,
-	.entry-meta,
-	.entry-content,
-	footer.entry-meta {
-		order: unset;
-	}
+// 	.entry-title,
+// 	.entry-image,
+// 	.entry-meta,
+// 	.entry-content,
+// 	footer.entry-meta {
+// 		order: unset;
+// 	}
 
-	.entry-image {
-		margin-bottom: 24px;
-		width: 100%;
-		background-color: $color__background-background;
-		text-align: center;
-	}
-}
+// 	.entry-image {
+// 		margin-bottom: 24px;
+// 		width: 100%;
+// 		background-color: $color__background-background;
+// 		text-align: center;
+// 	}
+// }
 
-.single-post {
-	.entry {
-		margin-bottom: 0;
-	}
-}
+// .single-post {
+// 	.entry {
+// 		margin-bottom: 0;
+// 	}
+// }
 
 footer.entry-meta {
 	flex: 1 100%;

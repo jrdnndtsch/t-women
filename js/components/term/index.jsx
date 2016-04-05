@@ -37,6 +37,7 @@ let Term = React.createClass( {
 		PostsStore.addChangeListener( this._onChange );
 
 		let filter = this.getFilter();
+		console.log(this)
 		API.getTerm( this.props );
 		API.getPosts( { filter: filter, page: this.props.page } );
 	},

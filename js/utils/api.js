@@ -119,12 +119,35 @@ export default {
 
 	// Get information about a term (category, tag)
 	// args: term, taxonomy
+	// getTerm: function( args ) {
+	// 	let url = `${FoxhoundSettings.URL.root}/posts?filter[category_name]=${args.term}`;
+	// 	// args = args.term
+
+	// 	jQuery.when(
+	// 		_get( url )
+	// 	).done( function( data ) {
+	// 		console.log( data.constructor )
+	// 		let originalData = data;
+	// 		// if ( data.constructor === Array ) {
+	// 		// 	console.log('array')
+	// 		// 	data = find( data, { slug: args.search } );
+	// 		// }
+	// 		console.log(args.search + 'search')
+	// 		if ( data ) {
+	// 			console.log('just data')
+	// 			TermActions.fetch( data );
+	// 		} else {
+	// 			console.log('failed')
+	// 			TermActions.failed( `No categories matched the term ${ args.search }`, originalData );
+	// 		}
+	// 	} );
+	// },
+
 	getTerm: function( args ) {
 		let url = `${FoxhoundSettings.URL.root}/${args.taxonomy}/`;
 		args = {
 			search: args.term
 		};
-
 		jQuery.when(
 			_get( url, args )
 		).done( function( data ) {
@@ -138,5 +161,5 @@ export default {
 				TermActions.failed( `No categories matched the term ${ args.search }`, originalData );
 			}
 		} );
-	},
+	}
 };

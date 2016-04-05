@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 // Internal dependencies
 import ContentMixin from 'utils/content-mixin';
+import CategoryList from './category-list'
 
 let Post = React.createClass( {
 	mixins: [ ContentMixin ],
@@ -30,14 +31,13 @@ let Post = React.createClass( {
 					<h2>
 						<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
 					</h2>
-					<p>{this.getCategory( post )}</p>
 					<a href={ post.link } rel="bookmark">
 						<time className="post--date published updated" dateTime={ post.date }>{ this.getDate( post ) }</time>
 					</a>
-					<a href="#">category</a>
+					<CategoryList data={this.getCategory( post )} />
 			        <img src={ this.getFeaturedImage( post ) } />
 					<div className="entry-content" dangerouslySetInnerHTML={ this.getExcerpt( post ) } />
-					<a href={ this.props.link }>Read More</a>
+					<a href={ this.props.link } className="button button--primary">Read More</a>
 				</div>
 			</article>
 		);

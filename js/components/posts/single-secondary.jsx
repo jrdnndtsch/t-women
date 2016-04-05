@@ -3,6 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 // Internal dependencies
+import CategoryList from './category-list'
 import ContentMixin from 'utils/content-mixin';
 
 let Secondarypost = React.createClass( {
@@ -28,10 +29,10 @@ let Secondarypost = React.createClass( {
 				<a href={ post.link } rel="bookmark">
 					<time dateTime={ post.date } className="post--date">{ this.getDate( post ) }</time>
 				</a>
-				<p>{this.getCategory( post )}</p>
+				<CategoryList data={this.getCategory( post )} />
 				<div className="entry-content" dangerouslySetInnerHTML={ this.getShortExcerpt( post ) } />
 
-				<a href={ post.link } rel="bookmark" className="button button--read-more">
+				<a href={ post.link } rel="bookmark" className="button button--secondary">
 					read more
 				</a>
 			</article>

@@ -29,7 +29,7 @@
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</div><!-- .site-branding -->
-
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-live="assertive"></nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

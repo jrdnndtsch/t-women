@@ -3,6 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 // Internal dependencies
+import CategoryList from './category-list'
 import ContentMixin from 'utils/content-mixin';
 
 let Tertiarypost = React.createClass( {
@@ -27,9 +28,9 @@ let Tertiarypost = React.createClass( {
 				<a href={ post.link } rel="bookmark">
 					<time dateTime={ post.date } className="post--date">{ this.getDate( post ) }</time>
 				</a>
-				<span>{ this.getCategory( post )}</span>
+				<CategoryList data={this.getCategory( post )} />
 
-				<a href={ post.link } rel="bookmark" className="button button--read-more">
+				<a href={ post.link } rel="bookmark" className="button button--primary">
 					read more
 				</a>
 			</article>

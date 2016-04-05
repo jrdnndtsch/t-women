@@ -32,7 +32,6 @@ export default {
 		data._embedded['https://api.w.org/term'][0].map(function( cat ){
 			categories.push([cat.name, cat.link])
 		});
-		console.log(categories + 'test')
 		return categories
 	},
 	getFeaturedImage: function( data ) {
