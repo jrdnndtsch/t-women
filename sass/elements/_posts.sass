@@ -8,7 +8,7 @@
 		&:after
 			:content '•'
 			:margin 0 10px
-.post--primary
+.post--primary 
 	:border-bottom 1px solid $purple
 	:position relative
 	:padding 60px 0
@@ -21,11 +21,14 @@
 		:height 1px
 		:background $purple
 		:width 100%
+	p 
+		:margin-bottom 50px	
 	img 
 		:margin-bottom 30px
 		:width 100%
 	.post--content
 		:padding 0 2.5%	
+			
 .post--secondary 
 	:background white
 	:border 1px solid $purple
@@ -54,3 +57,48 @@
 		&:nth-of-type(4n)
 			:margin-top 65px
 
+.post--tertiary
+	:padding 50px 2.5%
+	:border-bottom 1px solid $purple	
+	:display block 
+	:width 100%
+	&:last-of-type
+		:border-bottom none	
+	.col 
+		:display inline-block
+		:vertical-align middle
+		&:nth-of-type(2n + 1)
+			:width 70%
+		&:nth-of-type(2n + 2)
+			:width 30%
+			:text-align right			
+.post--secondary + .post--tertiary
+		:margin-top 70px
+		:position relative
+		:padding-top 80px
+		:border-top 1px solid $purple
+		&:before
+			:content " "
+			:position absolute
+			:top -5px
+			:left 0
+			:z-index -1
+			:border-top 1px solid $purple
+			:width 100%
+
+.post--secondary, .post--tertiary
+	h2 
+		:font-size 26px			
+.site-main
+	article 
+		&:last-child
+			:border-bottom none
+			&:after
+				:display none
+
+.single--featured-image
+	:max-height 400px
+	:overflow hidden
+	:margin-bottom 30px
+	img 
+		:width 100%

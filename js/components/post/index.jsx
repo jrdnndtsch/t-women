@@ -13,6 +13,7 @@ import PostMeta from './meta';
 import Pagination from '../pagination/single';
 import Media from './image';
 import Comments from '../comments';
+import CategoryList from '../posts/category-list'
 
 /*
  * Method to retrieve state from Stores
@@ -88,42 +89,25 @@ let SinglePost = React.createClass( {
 		} );
 
 
-		// featuredMedia = this.getFeaturedMedia( post );
-    // featuredImage = this.state.data._embedded["https://api.w.org/featuredmedia"][0].source_url;
-    // featuredImage = this.state.data.better_featured_image.source_ url
-    // featuredImage = post.better_featured_image.source_url
-    // featuredImage = post.better_featured_image.source_url
-    // featuredImage2 = this.getBetterFeaturedImage( post )
-    // featuredImage = this.getFeaturedImage( post.state )
-
 		return (
-			<div className="card">
-				<article id={ `post-${ post.id }` } className={ classes }>
-					<h1 className="entry-title" dangerouslySetInnerHTML={ this.getTitle( post ) } />
-					{ featuredMedia ?
-						<Media media={ featuredMedia } parentClass='entry-image' /> :
-						null
-					}
+			<div className="site-content">
+				<article id={ `post-${ post.id }` } className="post">
+					<div className="container">
+						<h1 dangerouslySetInnerHTML={ this.getTitle( post ) } />
+						<a href={ post.link } rel="bookmark">
+							<time className="post--date published updated" dateTime={ post.date }>{ this.getDate( post ) }</time>
+						</a>
+						<CategoryList data={this.getCategory( post )} />
+					</div>
 
-			          <div className="entry-image">
+			          <div className="single--featured-image">
 			            <img src={ this.getFeaturedImage( post ) } />
 			          </div>
+					<div className="container" dangerouslySetInnerHTML={ this.getContent( post ) } />
 
-					<div className="entry-meta"></div>
-					<div className="entry-content" dangerouslySetInnerHTML={ this.getContent( post ) } />
-
-					{ 'post' === this.props.type ?
-						<PostMeta slug={ post.slug } date={ post.date } humanDate={ this.getDate( post ) } /> :
-						null
-					}
 				</article>
 
-				{ 'post' === this.props.type ?
-					<Pagination postId={ post.id } /> :
-					null
-				}
-
-				<Comments postId={ post.id } title={ <span dangerouslySetInnerHTML={ this.getTitle( post ) } /> } commentsOpen={ 'open' === post.comment_status } />
+				<Comments postId={ post.id } title={ <span dangerouslySetInnerHTML={ this.getTitle( post ) } /> } commentsOpen={ 'open' === post.comment_status } className="container" />
 			</div>
 		);
 	}

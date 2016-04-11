@@ -1,0 +1,54 @@
+.nav--main
+	:background white
+	:border-bottom 1px solid $purple
+	:border-top 20px solid $purple
+	:position relative
+	
+	a 
+		:width 25%
+		:position absolute
+		:left 0
+		:border-bottom 1px solid $purple
+		:background white
+		:padding 20px 15px 10px 15px
+		
+	.container 
+		:align-items center	
+		:justify-content flex-end
+	.nav--search
+		:padding 30px 0 15px 0
+		:width 50%
+		:text-align right
+		:text-transform uppercase
+		:color $purple	
+.nav--main, .nav--main a 
+	&:after
+		:content " "
+		:position absolute
+		:bottom -4px
+		:left 0
+		:z-index -1
+		:border-bottom 1px solid $purple
+		:width 100%	
+.footer--main
+	:background white
+	:border-top 20px solid $purple
+	:padding 10px 0
+	img
+		:width 50px
+	.container--flex
+		:align-items center
+	.copyright
+		:text-align center
+		:color $purple
+		:font-size 12px
+		:font-style italic
+		span
+			:display block
+	.social
+		:font-size 24px
+		a 
+			:margin-right 12px
+			&:last-of-type
+				:margin-right 0				
+		

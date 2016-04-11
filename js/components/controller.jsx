@@ -155,7 +155,6 @@ let Controller = {
 	search: function( context ) {
 		_currentPage = parseInt( context.params.page ) || 1;
 		_currentSlug = context.params.term;
-
 		setBodyClass( 'search' );
 
 		ReactDOM.render(

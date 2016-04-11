@@ -80,9 +80,9 @@ let Term = React.createClass( {
 		}
 
 		return (
-			<div className="card">
-				<header className="page-header">
-					<h1 className="page-title">{ term.name }</h1>
+			<div className="site-content">
+				<header className="container">
+					<h1>{ term.name }</h1>
 					{ term.description.length > 0 ?
 						<div className="taxonomy-description">{ term.description }</div> :
 						null

@@ -58,13 +58,20 @@ let Index = React.createClass( {
 			<div className="placeholder">Your posts are loading…</div>
 		);
 	},
+	searchValue: function(){
+		if ( 'undefined' !== typeof this.refs.searchForm ) {
+			return this.refs.searchForm.getValue();
+		}
+		return '';
+	}, 
 
 	render: function() {
 		let posts = this.state.data;
 		this.setTitle();
-
+		let val = this.searchValue()
 		return (
 			<div className="site-content">
+				
 				{ posts.length ?
 					<PostList posts={ posts } /> :
 					this.renderPlaceholder()

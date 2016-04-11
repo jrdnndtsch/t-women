@@ -1,0 +1,46 @@
+.search-bar
+	:display inline-block
+#search-icon
+	:vertical-align bottom
+	:margin-left 10px	
+.widget_search
+	:display inline-block
+	:position relative
+	:height 25px
+	:width 25px
+	:box-sizing border-box
+	// :margin 0px 8px 7px 0px
+	// :padding 7px 9px 0px 9px
+	:border 1px solid $purple
+	:border-radius 25px
+	:transition all 200ms ease
+	:cursor text
+
+	&:after
+		:content ""
+		:position absolute
+		:width 1px
+		:height 15px
+		:right -2px
+		:top 19px
+		:background $purple
+		:border-radius 3px
+		:transform rotate(-45deg)
+		:transition all 200ms ease	
+	input 
+		:border none !important
+		:padding 0 !important
+		:width 100%
+		:box-sizing border-box
+		:font-size 15px
+		:color transparent
+		:background transparent
+		:outline-width 0px
+
+	&.active, &:hover
+		:width 200px
+		:margin-right 0px
+		&:after
+			:height 0px	
+	input.search-field
+		:margin 2px 0 2px 4px		

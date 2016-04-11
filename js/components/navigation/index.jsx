@@ -115,7 +115,7 @@ let Navigation = React.createClass( {
 
 		return (
 			<div className={ menuClasses }>
-				<div className="menu-toggle" onClick={ this.toggleMenu }>
+				<div className="menu-toggle hidden" onClick={ this.toggleMenu }>
 					<button onClick={ this.toggleMenu }>Menu</button>
 				</div>
 				<ul className="menu nav-menu" aria-expanded="false">

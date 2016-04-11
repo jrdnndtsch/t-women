@@ -28,10 +28,7 @@ let Comment = React.createClass( {
 						</div>
 
 						<div className="comment-author">
-						{ ( '' !== comment.author_url ) ?
-							<a href={ comment.author_url } className="fn">{ comment.author_name }</a> :
 							<span className="fn">{ comment.author_name }</span>
-						}
 						</div>
 
 						<div className="comment-metadata">

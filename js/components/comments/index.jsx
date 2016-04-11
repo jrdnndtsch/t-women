@@ -71,7 +71,7 @@ let SinglePost = React.createClass( {
 
 	renderForm: function() {
 		return (
-			<div className="comment-respond">
+			<div className="comment-respond container">
 				<h3 className="comment-reply-title">Leave a Reply</h3>
 
 				<CommentForm postId={ this.props.postId } />
@@ -104,7 +104,8 @@ let SinglePost = React.createClass( {
 
 		return (
 			<div className="comments-area" ref="comments">
-				<h2 className="comments-title">{ titleString }&ldquo;{ this.props.title }&rdquo;</h2>
+				{ this.props.commentsOpen && this.renderForm() }
+				<h2 className="comments-title container">{ titleString }&ldquo;{ this.props.title }&rdquo;</h2>
 
 				<ol className="comment-list">
 					{ comments }
@@ -112,7 +113,6 @@ let SinglePost = React.createClass( {
 
 				<CommentPagination end={ this.state.pagination } current={ this.state.page } onNextPage={ this.onNextPage } onPreviousPage={ this.onPreviousPage } />
 
-				{ this.props.commentsOpen && this.renderForm() }
 			</div>
 		);
 	}

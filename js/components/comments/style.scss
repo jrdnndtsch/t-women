@@ -2,13 +2,14 @@
     Comments
 --------------------------------------------------------------*/
 
-.comments-area {
-	margin-bottom: 75px;
+// .comments-area {
+// 	margin-bottom: 75px;
 
-	@include breakpoint( '>660px' ) {
-		@include sidebar-margin;
-	}
-}
+// 	@include breakpoint( '>660px' ) {
+// 		@include sidebar-margin;
+// 	}
+// }
+$purple : #7F688D;
 
 .comments-title,
 .comment-list,
@@ -74,25 +75,31 @@
 	align-items: flex-start;
 
 	margin-bottom: 20px;
-	border: 1px solid $color__border-input;
+	border-bottom: 1px solid $purple;
 	color: $color__text-label;
 
 	label {
 		flex: 0 auto;
-		padding: 15px;
+		padding: 10px;
+		color: $purple;
+		text-transform: uppercase;
 	}
 
 	input, textarea {
 		flex: 1;
-		padding: 13px 20px 14px 0;
+		padding: 10px 20px 10px 0;
 		width: 100%;
-		color: $color__text-input;
-		background-color: $color__background-body;
+		line-height: 20px;
+		
 
 		&:focus {
 			color: $color__text-input-focus;
 		}
 	}
+	textarea{
+		border-bottom: none !important;
+		border: 1px solid $purple;	
+	}	
 
 	&.comment-form-comment {
 		label, textarea {
@@ -101,15 +108,15 @@
 
 		textarea {
 			min-height: 140px;
-			padding: 0 15px 15px;
+			padding: 15px;
 		}
 	}
 }
 
-.comment-form-submit {
-	text-align: right;
+// .comment-form-submit {
+// 	text-align: right;
 
-	input[type="submit"] {
-		background-color: $color__background-button-primary;
-	}
-}
+// 	input[type="submit"] {
+// 		background-color: $color__background-button-primary;
+// 	}
+// }

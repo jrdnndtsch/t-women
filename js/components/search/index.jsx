@@ -62,10 +62,6 @@ let Search = React.createClass( {
 		return '';
 	},
 
-	search: function(){
-		console.log('I am searching')
-	},
-
 	setTitle: function() {
 		let term = this.getSearchValue();
 		document.title = `Search results for ${term} — ${FoxhoundSettings.title}`;
@@ -75,12 +71,13 @@ let Search = React.createClass( {
 		let posts = this.state.data;
 		let term = this.getSearchValue();
 		this.setTitle();
+	
 
 		return (
 			<div className='site-content'>
-				<header className="page-header">
-					<h1 className="page-title">Search results for &ldquo;{ term }&rdquo;</h1>
-					<SearchForm ref='searchForm' initialSearch={ this.props.term } onChange={ this.search } />
+				<header className="container">
+					<h1>Search results for &ldquo;{ this.props.term }&rdquo;</h1>
+					<SearchForm ref='searchForm' initialSearch={ this.props.term } onChange={ this.search } data="hello" />
 				</header>
 
 				{ posts.length ?
