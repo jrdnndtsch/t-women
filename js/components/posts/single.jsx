@@ -31,12 +31,16 @@ let Post = React.createClass( {
 					<h2>
 						<a href={ this.props.link } rel="bookmark" dangerouslySetInnerHTML={ this.getTitle( this.props ) } />
 					</h2>
-					<a href={ post.link } rel="bookmark">
-						<time className="post--date published updated" dateTime={ post.date }>{ this.getDate( post ) }</time>
-					</a>
-					<CategoryList data={this.getCategory( post )} />
-			        <img src={ this.getFeaturedImage( post ) } />
-					<div className="entry-content" dangerouslySetInnerHTML={ this.getExcerpt( post ) } />
+					<div>
+						<a href={ post.link } rel="bookmark">
+							<time className="post--date published updated" dateTime={ post.date }>{ this.getDate( post ) }</time>
+						</a>
+						<CategoryList data={this.getCategory( post )} />
+					</div>
+					<div className="post--entry-content">
+				        <img src={ this.getFeaturedImage( post ) } />
+						<div className="entry-content" dangerouslySetInnerHTML={ this.getExcerpt( post ) } />
+					</div>
 					<a href={ this.props.link } className="button button--primary">Read More</a>
 				</div>
 			</article>

@@ -20,7 +20,7 @@ let Comment = React.createClass( {
 		}
 
 		return (
-			<li className={ classes }>
+			<li className="container comment-single">
 				<article className="comment-body">
 					<footer className="comment-meta">
 						<div className="comment-avatar vcard">

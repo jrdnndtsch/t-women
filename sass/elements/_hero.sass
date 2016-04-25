@@ -6,6 +6,10 @@
 	:background-position center
 	img, h2
 		:width 40%
+		+display-for(md)
+			:width 60%
+		+display-for(sm xs)
+			:width 80%
 	h2 
 		:font-size 26px
 		:text-align center

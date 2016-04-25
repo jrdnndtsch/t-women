@@ -9,7 +9,7 @@ let CommentForm = React.createClass( {
 
 	onSubmit: function( event ) {
 		event.preventDefault();
-		let keys = [ 'author', 'author_id', 'email', 'url', 'comment', 'comment_post_ID', 'comment_parent' ];
+		let keys = [ 'author', 'author_id', 'email', 'comment', 'comment_post_ID', 'comment_parent' ];
 		let rawValues = {};
 		keys.map( function( key ) {
 			rawValues[ key ] = event.target[ key ].value;
@@ -19,7 +19,6 @@ let CommentForm = React.createClass( {
 		values.author = rawValues.author_id;
 		values.author_email = rawValues.email;
 		values.author_name = rawValues.author;
-		values.author_url = rawValues.url;
 		values.content = rawValues.comment;
 		values.post = rawValues.comment_post_ID;
 

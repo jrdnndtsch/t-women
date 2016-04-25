@@ -74,6 +74,7 @@ let SinglePost = React.createClass( {
 		return null;
 	},
 
+
 	render: function() {
 		let post, classes, featuredMedia, featuredImage;
 
@@ -92,7 +93,7 @@ let SinglePost = React.createClass( {
 		return (
 			<div className="site-content">
 				<article id={ `post-${ post.id }` } className="post">
-					<div className="container">
+					<div className="container single--title">
 						<h1 dangerouslySetInnerHTML={ this.getTitle( post ) } />
 						<a href={ post.link } rel="bookmark">
 							<time className="post--date published updated" dateTime={ post.date }>{ this.getDate( post ) }</time>
@@ -104,6 +105,7 @@ let SinglePost = React.createClass( {
 			            <img src={ this.getFeaturedImage( post ) } />
 			          </div>
 					<div className="container" dangerouslySetInnerHTML={ this.getContent( post ) } />
+
 
 				</article>
 

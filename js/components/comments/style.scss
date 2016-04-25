@@ -23,13 +23,16 @@ $purple : #7F688D;
 	list-style: none;
 
 	article {
+		margin-top: 30px;
 		margin-bottom: 30px;
+		padding: 0 5%;
 	}
 }
 
 .comment-meta {
 	margin-bottom: 15px;
 	text-align: center;
+	color: $purple;
 }
 
 .comment-avatar img {
@@ -39,7 +42,7 @@ $purple : #7F688D;
 	height: 64px;
 	width: 64px;
 	border-radius: 50%;
-	border: 1px solid $color__border;
+	border: 1px solid $purple;
 }
 
 .comment-author {
